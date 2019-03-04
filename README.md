@@ -1,57 +1,23 @@
-# Introduction
+# PSProductivityTools
 
-The PSProductivityTools PowerShell module contains commands for productivity tools & topics such as time management.
+This is a fork of the [PSProductivityTools PowerShell repository](https://github.com/janegilring/PSProductivityTools) by [Jan Egil Ring](https://twitter.com/JanEgilRing) and [Ståle Hansen](https://twitter.com/StaleHansen).
 
-# Installation
+This is a striped down version of their great work, limiting the features to only a configurable timer and If This Then That webhook integration.
 
-The module is published to the PowerShell Gallery, which means you can install it using the following command from the PowerShellGet module:
+## Overview
 
-`Install-Module -Name PSProductivityTools`
+This is a tool that allows for a Pomodoro timer to be started from via a PowerShell script. The timer will enable Windows Presentation Mode that will suppress notifications for the period the timer is running. The optional IFTTT webhook integration allows for the other actions to be triggered by the service such as muting your phone (sadly not for iOS devices :disappointed:) or any other actions on IFFTT.
 
-or the following if you want it installed the current users profile (*$env:userprofile\Documents\WindowsPowerShell\Modules*) rather than the system wide location (*$env:programfiles\WindowsPowerShell\Modules*):
+## Installation
 
-`Install-Module -Name PSProductivityTools -Scope CurrentUser`
+This module can be installed locally by pulling the repo, copying the `PSProductivityTools` folder into your local WindowsPowerShell Modules folder. This can be found `%UserProfile%\Documents\WindowsPowerShell\Modules`
 
-When a new version is released with bug fixes or new functionality you can update to the latest version simply by typing the following command:
+## Usage
 
-`Update-Module -Name PSProductivityTools`
+- **Start-Pomodoro** - Start a new Pomodoro 25 minute timer and enable presentation mode which will suppress windows notifications
 
-PowerShellGet is included by default in PowerShell V5, and available downlevel for PowerShell 3.0 and 4.0.
+- **Start-Pomodoro -Minutes 50** - Start a new timer with a custom duration
 
-If you want to install the module without leveraging PowerShellGet, you can either clone the Git-repository or download [this](https://github.com/janegilring/PSProductivityTools/archive/master.zip) ZIP-file and place the contains in one of the following locations:
-- $env:userprofile\Documents\WindowsPowerShell\Modules\PSProductivityTools
-- $env:programfiles\WindowsPowerShell\Modules\PSProductivityTools
+- **Start-Pomodoro -IFTTStartTrigger pomodoro_start -IFTTStopTrigger pomodoro_stop -IFTTWebhookKey xxx** - Start a timer that triggers a IFTTT webhook
 
-# Requirements
-
-- PowerShell 4.0 or later on the computer the module is installed on
-
-# Optional requirements
-
-- Enable presentation settings on workstation: https://msunified.net/2013/11/25/lock-down-your-lync-status-and-pc-notifications-using-powershell/
-- Installing Lync 2013 client SDK for presence and notes manipulation: https://msunified.net/2017/08/20/how-to-install-the-lync-2013-client-sdk-without-being-prompted-to-install-visual-studio/
-- Set up custom presence states on local machine: https://msunified.net/2017/08/20/how-to-set-custom-presence-state-in-skype-for-business-on-your-windows-machine/
-
-# Usage
-
-After installation, you can view available commands by using Get-Command:
-`Get-Command -Module PSProductivityTools`
-
-The module currently contains the following functions:
-- **Publish-SfBContactInformation** - Publish-SfBContactInformation is a PowerShell function to configure a set of availability settings in the Skype for Business client.
-- **Start-Pomodoro** - Initiates a new Pomodoro sprint and supports several actions such as configuring availability in Skype for Business, enable presentation mode, start music and trigger custom tasks using IFTT such as muting/unmuting a mobile device.
-
-Read more about getting started here: https://msunified.net/2017/08/23/set-yourself-unavailable-with-this-open-source-powershell-based-pomodoro-timer/
-And here: http://www.powershell.no/productivity/2017/08/24/introducing-psproductivitytools.html
-
-# Planned features and todo-list
-
-- Add Pester tests
-- Add help
-
-# Contributors
-
-[Jan Egil Ring](https://twitter.com/JanEgilRing) - author
-[Ståle Hansen](https://twitter.com/StaleHansen) - author
-
-Everyone is welcome to assist by forking the project and submitting pull requests with proposed fixes and enhancements.
+- **Ctrl + C** - Stops the current Pomodoro timer and sends the stop trigger to IFTTT if used

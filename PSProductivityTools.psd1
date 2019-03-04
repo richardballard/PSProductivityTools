@@ -66,7 +66,7 @@ FormatsToProcess = @()
 # NestedModules = @()
 
 # Functions to export from this module
-FunctionsToExport = @('Publish-SfBContactInformation','Start-Pomodoro')
+FunctionsToExport = @('Start-Pomodoro')
 
 # Cmdlets to export from this module
 CmdletsToExport = @()
