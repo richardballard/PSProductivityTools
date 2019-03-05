@@ -6,7 +6,7 @@ This is a striped down version of their great work, limiting the features to onl
 
 ## Overview
 
-This is a tool that allows for a Pomodoro timer to be started from via a PowerShell script. The timer will enable Windows Presentation Mode that will suppress notifications for the period the timer is running. The optional IFTTT webhook integration allows for the other actions to be triggered by the service such as muting your phone (sadly not for iOS devices :disappointed:) or any other actions on IFFTT.
+This is a tool that allows for a Pomodoro timer to be started from via a PowerShell script. The timer will enable Windows Presentation Mode that will suppress notifications for the period the timer is running. The optional IFTTT webhook integration allows for the other actions to be triggered by the service such as muting your phone (sadly not for iOS devices :disappointed:) or any other actions on IFTTT.
 
 ## Installation
 
@@ -20,4 +20,10 @@ This module can be installed locally by pulling the repo, copying the `PSProduct
 
 - **Start-Pomodoro -IFTTStartTrigger pomodoro_start -IFTTStopTrigger pomodoro_stop -IFTTWebhookKey xxx** - Start a timer that triggers a IFTTT webhook
 
-- **Ctrl + C** - Stops the current Pomodoro timer and sends the stop trigger to IFTTT if used
+- **Ctrl + C** - Stops the current Pomodoro timer and sends the stop trigger to IFTTT, if used
+
+## Configure IFTTT
+
+In order to use IFTTT you need to have configured the service to listen for a webhook trigger and perform your desired action. The script needs two webhook actions creating, a _start_ and _stop_ trigger.
+
+Details can be found at [IFTTT Webhook](https://ifttt.com/maker_webhooks).
