@@ -1,4 +1,4 @@
-# PSProductivityTools
+# Pomodoro Timer - PSProductivityTools
 
 This is a fork of the [PSProductivityTools PowerShell repository](https://github.com/janegilring/PSProductivityTools) by [Jan Egil Ring](https://twitter.com/JanEgilRing) and [Ståle Hansen](https://twitter.com/StaleHansen).
 
