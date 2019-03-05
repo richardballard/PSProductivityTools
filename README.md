@@ -26,4 +26,4 @@ This module can be installed locally by pulling the repo, copying the `PSProduct
 
 In order to use IFTTT you need to have configured the service to listen for a webhook trigger and perform your desired action. The script needs two webhook actions creating, a _start_ and _stop_ trigger.
 
-Details can be found at [IFTTT Webhook](https://ifttt.com/maker_webhooks).
+Details can be found at [IFTTT Webhook](https://ifttt.com/maker_webhooks). Once you have set up the triggers use these values and the Webhook key in the `-IFTTStartTrigger`,  `-IFTTStopTrigger` and `-IFTTWebhookKey` options show in the usage example above.
