@@ -2,7 +2,7 @@
 
 This is a fork of the [PSProductivityTools PowerShell repository](https://github.com/janegilring/PSProductivityTools) by [Jan Egil Ring](https://twitter.com/JanEgilRing) and [Ståle Hansen](https://twitter.com/StaleHansen).
 
-This is a striped down version of their great work, limiting the features to only a configurable timer and If This Then That webhook integration.
+This is a stripped down version of their great work, limiting the features to only a configurable timer and If This Then That webhook integration.
 
 ## Overview
 
